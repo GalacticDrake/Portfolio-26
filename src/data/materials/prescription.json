@@ -1,0 +1,21 @@
+{
+  "_id": "showcases/882c555f-6f9e-4777-95e5-d530d87b81f0",
+  "genres": ["UI"],
+  "title": "prescription management system",
+  "subtitle": "optimising prescription system as part of a larger medical management system.",
+  "imageName": "hgb-prescription.png",
+  "scopeDetails": {
+    "roleScope": ["ui designer", "front-end developer"],
+    "timeScope": "2 months",
+    "designerNo": "2",
+    "developerNo": "3"
+  },
+  "projectStatements": {
+    "mainStatement": "what is the best way to design a prescription system that fits both mobile and desktop view?"
+  },
+  "yearOfCompletion": "2024",
+  "createdAt": "2026-05-20T09:28:23Z",
+  "updatedAt": "2026-05-20T09:28:23Z",
+  "showcaseLink": "prescription",
+  "status": true
+}

@@ -1,0 +1,175 @@
+.intro-container {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+
+  @media screen and (min-width: 1096px) {
+    padding-top: 64px;
+    padding-bttom: 0;
+  }
+}
+
+.lic-inner {
+  width: 100%;
+  padding: 0 24px;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+  }
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lic-name {
+  font-size: var(--heading-h1);
+  color: var(--dark-grey);
+  text-align: center;
+}
+
+.lic-job-scope-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.lic-jsc-text-grp {
+  position: relative;
+  flex: 1;
+
+  @media screen and (min-width: 512px) {
+    flex: 0 1 auto;
+  }
+
+  .lic-jsc-hover {
+    display: none;
+  }
+
+  &:hover .lic-jsc-hover {
+    display: flex;
+    position: absolute;
+    bottom: 40px;
+    z-index: 2;
+
+    @media screen and (min-width: 512px) {
+      bottom: 24px;
+    }
+
+    background-color: var(--l-dark-grey);
+    color: var(--background);
+
+    font-size: var(--subtitle);
+
+    padding: 4px 12px;
+    border-radius: 8px;
+  }
+}
+
+.lic-jsc-text {
+  text-transform: lowercase;
+  font-weight: bold;
+
+  text-align: center;
+
+  transition: 0.4s;
+
+  &.ui {
+    color: var(--primary);
+  }
+
+  &.ux {
+    color: var(--secondary);
+  }
+
+  &.fd {
+    color: var(--grey);
+
+    &:hover {
+      color: var(--dark-grey);
+    }
+  }
+}
+
+.lic-jsc-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--grey);
+  border-radius: 50%;
+}
+
+/* showcase container */
+
+.showcase-container {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 1096px) {
+    gap: 64px;
+    padding: 64px 0;
+  }
+}
+
+/* legacy container */
+
+.legacy-container {
+  background-color: var(--light-grey);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media screen and (min-width: 1096px) {
+    gap: 32px;
+    padding: 64px 0;
+  }
+}
+
+.llc-inner {
+  width: 100%;
+  gap: 24px;
+  display: grid;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+.llc-link {
+  width: 100%;
+  padding: 16px 24px;
+  display: flex;
+  justify-content: flex-end;
+
+  color: var(--primary);
+  font-weight: bold;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+    padding: 0px;
+  }
+}
+
+/* skills container */
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+}
+
+.lsk-inner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+    gap: 48px;
+    padding: 64px 0;
+  }
+}

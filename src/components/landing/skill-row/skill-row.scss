@@ -1,0 +1,28 @@
+.skill-row-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.src-group {
+  display: flex;
+}
+
+.lsc-skill-row {
+  display: flex;
+  align-items: center;
+  column-gap: 16px;
+  flex-wrap: wrap;
+}
+
+.src-skill-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--grey);
+  border-radius: 50%;
+}
+
+.src-skill-text {
+  font-weight: bold;
+}

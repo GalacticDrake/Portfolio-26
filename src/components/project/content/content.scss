@@ -1,0 +1,75 @@
+.project-content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 48px;
+}
+
+.pcc-inner {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+    padding: 0;
+  }
+}
+
+.pcc-progress-container {
+  display: flex;
+
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.pcc-div {
+  height: 4px;
+  position: relative;
+
+  .pcc-tooltip {
+    display: none;
+  }
+
+  &:hover .pcc-tooltip {
+    display: flex;
+    position: absolute;
+    bottom: 8px;
+    z-index: 2;
+
+    font-size: var(--subtitle);
+
+    color: var(--background);
+
+    padding: 2px 8px;
+    border-radius: 8px;
+    right: 0;
+  }
+}
+
+.pcc-progress {
+  background-color: var(--primary);
+
+  .pcc-tooltip {
+    background-color: var(--primary);
+  }
+}
+
+.pcc-prev-progress {
+  background-color: var(--grey);
+
+  .pcc-tooltip {
+    background-color: var(--l-dark-grey);
+  }
+}
+
+.pcc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}

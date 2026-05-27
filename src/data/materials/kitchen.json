@@ -1,0 +1,21 @@
+{
+  "_id": "showcases/7d56e712-c709-483b-abda-715874efdeee",
+  "genres": ["UX"],
+  "title": "interaction of cooking appliances",
+  "subtitle": "investigating user behaviour with interaction on cooking appliances... when cooking.",
+  "imageName": "hgb-kitchen.jpg",
+  "imageSource": "diamond quality",
+  "yearOfCompletion": "2026",
+  "scopeDetails": {
+    "roleScope": ["ux researcher"],
+    "timeScope": "6 weeks",
+    "researcherNo": "3"
+  },
+  "projectStatements": {
+    "mainStatement": "how do people interact with cooking appliances? is it sequential? multi-tasking? or a mix of both, and when?"
+  },
+  "createdAt": "2026-05-20T09:28:23Z",
+  "updatedAt": "2026-05-20T09:28:23Z",
+  "showcaseLink": "kitchen",
+  "status": true
+}

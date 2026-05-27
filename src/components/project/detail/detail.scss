@@ -1,0 +1,39 @@
+.project-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pdc-inner {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+    padding: 0;
+  }
+}
+
+.pdc-row {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.pdc-col {
+  font-weight: bold;
+  color: var(--dark-grey);
+}
+
+.pdc-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}

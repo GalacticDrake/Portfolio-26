@@ -1,0 +1,36 @@
+.project-statement-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.psc-inner {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+    padding: 0;
+  }
+}
+
+.psc-row {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.psc-col {
+  color: var(--dark-grey);
+}
+
+.psc-main-col {
+  color: var(--primary);
+  font-weight: bold;
+}

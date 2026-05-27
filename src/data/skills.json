@@ -1,0 +1,31 @@
+{
+  "design": [
+    { "text": "figma", "highlight": true },
+    { "text": "material design", "highlight": true },
+    { "text": "material ui", "highlight": true },
+    { "text": "ant design", "highlight": true },
+    { "text": "adobe illustrator", "highlight": false },
+    { "text": "adobe xd", "highlight": false },
+    { "text": "apple human interface guidelines", "highlight": false },
+    { "text": "bootstrap", "highlight": false },
+    { "text": "tailwind", "highlight": false }
+  ],
+  "research": [
+    { "text": "qualitative research", "highlight": true },
+    { "text": "semi-structured interviews", "highlight": true },
+    { "text": "reflexive thematic analysis", "highlight": true },
+    { "text": "quantitative research", "highlight": false },
+    { "text": "affinity mapping", "highlight": false }
+  ],
+  "tech stack": [
+    { "text": "react js", "highlight": true },
+    { "text": "arangodb", "highlight": true },
+    { "text": "koa api", "highlight": true },
+    { "text": "go", "highlight": true },
+    { "text": "c", "highlight": false },
+    { "text": "c++", "highlight": false },
+    { "text": "c# (unity game engine)", "highlight": false },
+    { "text": "java", "highlight": false },
+    { "text": "python", "highlight": false }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "_id": "showcases/764534db-5a23-4974-bd7e-41420e083ba4",
+  "genres": ["UI"],
+  "title": "protothon 2026: enterprise",
+  "subtitle": "re-imaging an equipment inventory management system (ims) through wireframes.",
+  "imageName": "hgb-protothon.jpg",
+  "yearOfCompletion": "2026",
+  "scopeDetails": {
+    "roleScope": ["ui designer"],
+    "timeScope": "1 day",
+    "designerNo": "3"
+  },
+  "projectStatements": {
+    "mainStatement": "how do we design an equipment inventory management system that integrates rapid check-in check-out capability?"
+  },
+  "createdAt": "2026-05-20T09:28:23Z",
+  "updatedAt": "2026-05-20T09:28:23Z",
+  "showcaseLink": "protothon-2026",
+  "status": true
+}

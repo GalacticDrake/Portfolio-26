@@ -1,0 +1,118 @@
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: hsl(148, 100%, 41%);
+  --secondary: hsl(191, 100%, 50%);
+
+  --dark-grey: hsl(0, 0%, 29%);
+  --l-dark-grey: hsl(0, 0%, 44%);
+  --grey: hsl(0, 0%, 86%);
+  --light-grey: hsl(0, 0%, 95%);
+
+  --heading-h1: clamp(38px, 1vw + 10px, 42px);
+  --heading-h4: clamp(20px, 1vw + 10px, 26px);
+  --heading-h5: clamp(16px, 1vw + 10px, 20px);
+  --heading-h6: clamp(14px, 1vw + 10px, 18px);
+  --body: clamp(12px, 1vw + 10px, 16px);
+  --subtitle: clamp(10px, 1vw + 10px, 12px);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-main: var(--font-quicksand);
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--dark-grey);
+  font-family: var(--font-main);
+  font-size: var(--body);
+}
+
+ul {
+  margin-top: 8px;
+}
+
+a {
+  &:link,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  &.small-link {
+    text-decoration: underline;
+  }
+}
+
+.d-link {
+  transition: 0.4s;
+
+  &:hover {
+    color: var(--primary);
+  }
+}
+
+/* page scss */
+.project-container {
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 48px;
+
+  @media screen and (min-width: 576px) {
+    gap: 48px;
+  }
+}
+
+.project-main-content {
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (min-width: 576px) {
+    gap: 48px;
+  }
+}
+
+.pc-content-title {
+  font-size: var(--heading-h5);
+  font-weight: bold;
+  color: var(--dark-grey);
+
+  &:not(:first-child) {
+    margin-top: 16px;
+  }
+}
+
+.pc-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pc-content-body {
+  text-transform: lowercase;
+
+  &.gallery {
+    margin-top: 24px;
+    border-bottom: solid 1px var(--grey);
+  }
+}
+
+.pc-li-emp {
+  font-weight: bold;
+  color: var(--dark-grey);
+}
