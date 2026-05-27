@@ -1,6 +1,6 @@
 import "./content.scss";
 
-const ProjectContent = (props) => {
+const ProjectContent = (props: any) => {
   const {
     children,
     prevProg = 0,

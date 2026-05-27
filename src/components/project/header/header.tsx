@@ -3,7 +3,7 @@ import "./header.scss";
 import GenreTab from "@Components/genre/genre-tab";
 import ProjectDetail from "../detail/detail";
 
-const ProjectHeader = (props) => {
+const ProjectHeader = (props: any) => {
   const {
     types = [],
     title,
@@ -22,7 +22,7 @@ const ProjectHeader = (props) => {
       ></div>
       <div className="phc-inner">
         <div className="phc-genre-container">
-          {types.map((t, i) => (
+          {types.map((t: any, i: number) => (
             <GenreTab key={i} type={t} />
           ))}
         </div>

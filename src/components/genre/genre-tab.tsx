@@ -1,6 +1,14 @@
 import "./genre-tab.scss";
 
-const TEXT_TYPE = {
+type TextTypeProp = {
+  [key: string]: {
+    text: string;
+    backgroundColor: string;
+    color: string;
+  };
+};
+
+const TEXT_TYPE: TextTypeProp = {
   UI: {
     text: "User Interface",
     backgroundColor: "var(--primary)",
@@ -13,7 +21,7 @@ const TEXT_TYPE = {
   },
 };
 
-const GenreTab = (props) => {
+const GenreTab = (props: any) => {
   const { type, groupType = {} } = props || {};
 
   const { text, backgroundColor, color } = groupType?.text

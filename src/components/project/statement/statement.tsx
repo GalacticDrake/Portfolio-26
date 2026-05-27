@@ -1,13 +1,13 @@
 import "./statement.scss";
 
-const ProjectStatement = (props) => {
+const ProjectStatement = (props: any) => {
   const { generalStatements = [], mainStatement } = props || {};
 
   return (
     <div className="project-statement-container">
       <div className="psc-inner">
         <div className="psc-row">
-          {generalStatements.map((r, i) => (
+          {generalStatements.map((r: string, i: number) => (
             <div className="psc-col" key={i}>
               {r}
             </div>

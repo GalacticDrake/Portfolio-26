@@ -6,7 +6,7 @@ type participantObj = {
   [key: string]: number;
 };
 
-const ProjectDetail = (props) => {
+const ProjectDetail = (props: any) => {
   const {
     roleScope = [],
     timeScope,
@@ -27,7 +27,7 @@ const ProjectDetail = (props) => {
     <div className="project-detail-container">
       <div className="pdc-inner">
         <div className="pdc-row">
-          {roleScope.map((r, i) => (
+          {roleScope.map((r: string, i: number) => (
             <React.Fragment key={i}>
               <div className="pdc-col">{r}</div>
               {i !== roleScope.length - 1 && <div className="pdc-dot"></div>}
