@@ -8,6 +8,7 @@ import FirstData from "@Data/materials/home-assistant.json";
 import SecondData from "@Data/materials/kitchen.json";
 import ThirdData from "@Data/materials/protothon-2026.json";
 import FourthData from "@Data/materials/prescription.json";
+import FifthData from "@Data/materials/pulse.json";
 
 import Showcase from "@Components/landing/showcase/showcase";
 
@@ -15,7 +16,7 @@ import SkillRow from "@Components/landing/skill-row/skill-row";
 import NoticeBar from "@Components/notice/notice";
 
 const ShowcaseData = [FirstData, SecondData, ThirdData];
-const LegacyData = [FourthData];
+const LegacyData = [FourthData, FifthData];
 
 const Landing = () => {
   return (

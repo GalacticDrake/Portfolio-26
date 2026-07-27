@@ -1,0 +1,24 @@
+{
+  "_id": "showcases/681a30e5-35da-46d3-8a4c-46383b63e039",
+  "genres": ["UI"],
+  "title": "pulse (revisit, case study)",
+  "subtitle": "b2b financial dashboard for secure cross-border transactions, supporting huge batch of transactions",
+  "imageName": "hgb-pulse.webp",
+  "yearOfCompletion": "2023 (2026)",
+  "scopeDetails": {
+    "roleScope": ["ui designer"],
+    "timeScope": "4 months",
+    "designerNo": "2"
+  },
+  "projectStatements": {
+    "generalStatements": [
+      "unlike commercial transactions where only a little amount is required, there is a need to facilitate organisations' huge transactions across the world. due to complications especially with security and regulatory hurdles, this platform assists with overcoming them, providing a smooth cross-border transaction.",
+      "we created a platform to facilitate this, but looking back, there are a few problems. one highlight is especially on batch payment system. thus, for this case study..."
+    ],
+    "mainStatement": "how can we optimise multi-currency batch payment system to cut transaction time?"
+  },
+  "createdAt": "2026-05-20T09:28:23Z",
+  "updatedAt": "2026-05-20T09:28:23Z",
+  "showcaseLink": "pulse",
+  "status": true
+}

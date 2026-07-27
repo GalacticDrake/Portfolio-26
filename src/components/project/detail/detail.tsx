@@ -23,6 +23,9 @@ const ProjectDetail = (props: any) => {
     developer: developerNo,
   };
 
+  // extract only the ones with more than 0
+  let entries = Object.entries(participantNo).filter(([, value]) => value > 0);
+
   return (
     <div className="project-detail-container">
       <div className="pdc-inner">
@@ -40,25 +43,16 @@ const ProjectDetail = (props: any) => {
           <div className="pdc-col">{yearOfCompletion}</div>
         </div>
         <div className="pdc-row">
-          {Object.keys(participantNo).map((o, i) => {
-            if (participantNo[o] == 0) return null;
-
+          {entries.map(([name, value], i) => {
             return (
               <React.Fragment key={i}>
+                {i > 0 && <div className="pdc-dot"></div>}
                 <div className="pdc-col">
-                  {participantNo[o] + ` ${o}${participantNo[o] > 0 && "s"}`}
+                  {value + ` ${name}${value > 0 && "s"}`}
                 </div>
-                {i !== Object.keys(participantNo).length - 1 && (
-                  <div className="pdc-dot"></div>
-                )}
               </React.Fragment>
             );
           })}
-          {/* {researcherNo > 0 && (
-            <div className="pdc-col">
-              {researcherNo} researcher{parseInt(researcherNo) > 0 && "s"}
-            </div>
-          )} */}
         </div>
       </div>
     </div>
