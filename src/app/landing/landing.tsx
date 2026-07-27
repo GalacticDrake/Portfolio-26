@@ -35,7 +35,7 @@ const Landing = () => {
             </div>
             <div className="lic-jsc-dot"></div>
             <div className="lic-jsc-text-grp">
-              <div className="lic-jsc-hover">phasing out!</div>
+              <div className="lic-jsc-hover">hmm...</div>
               <div className="lic-jsc-text fd">Fullstack developer</div>
             </div>
           </div>
