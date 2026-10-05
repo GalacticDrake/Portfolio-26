@@ -4,6 +4,10 @@
   align-items: center;
 
   gap: 48px;
+
+  &.pad-bot {
+    padding-bottom: 24px;
+  }
 }
 
 .pcc-inner {

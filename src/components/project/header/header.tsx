@@ -1,3 +1,5 @@
+"use client";
+
 import "./header.scss";
 
 import GenreTab from "@Components/genre/genre-tab";
@@ -16,6 +18,13 @@ const ProjectHeader = (props: any) => {
 
   return (
     <div className="project-header-container">
+      <div className="project-header-nav">
+        <div className="phn-button-group">
+          <div className="phn-button" onClick={() => history.back()}>
+            {`<`} back
+          </div>
+        </div>
+      </div>
       <div
         className="phc-image-container"
         style={{ backgroundImage: `url('/landing/${imageName}')` }}

@@ -3,7 +3,43 @@
   flex-direction: column;
   align-items: center;
 
+  position: relative;
+
   gap: 48px;
+}
+
+.project-header-nav {
+  position: absolute;
+  width: 100%;
+  padding: 24px;
+
+  @media screen and (min-width: 1096px) {
+    width: 1000px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.phn-button-group {
+  display: flex;
+}
+
+.phn-button {
+  padding: 8px 24px;
+  background-color: var(--background);
+  border-radius: 50px;
+
+  font-size: 12px;
+  font-weight: bold;
+
+  border: 1px solid var(--grey);
+  cursor: pointer;
+
+  transition: 0.4s;
+
+  &:hover {
+    background-color: var(--grey);
+  }
 }
 
 .phc-image-container {
