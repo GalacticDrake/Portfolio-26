@@ -19,6 +19,11 @@ const TEXT_TYPE: TextTypeProp = {
     backgroundColor: "var(--secondary)",
     color: "var(--background)",
   },
+  AI: {
+    text: "Artificial Intelligence",
+    backgroundColor: "var(--reddish)",
+    color: "var(--background)",
+  },
 };
 
 const GenreTab = (props: any) => {

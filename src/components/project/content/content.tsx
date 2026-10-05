@@ -8,10 +8,14 @@ const ProjectContent = (props: any) => {
     prevProgTip,
     currProgTip,
     showProgress = true,
+    bgColor = null,
   } = props || {};
 
   return (
-    <div className="project-content-container">
+    <div
+      className={`project-content-container ${bgColor && "pad-bot"}`}
+      style={{ backgroundColor: bgColor }}
+    >
       <div className="pcc-inner">
         {showProgress && (
           <div className="pcc-progress-container">
