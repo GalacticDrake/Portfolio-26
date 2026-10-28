@@ -7,10 +7,18 @@ import EmblaCarousel from "@/components/embla/embla";
 
 import { EmblaOptionsType } from "embla-carousel";
 import Link from "next/link";
+import DecisionTable from "./decision-table";
 
 const OPTIONS: EmblaOptionsType = { loop: false };
 
 const IMG_URL = "/images/prescription/";
+
+const USER_FLOW_IMAGE = [
+  {
+    title: "User flow",
+    imagePath: `${IMG_URL}/user_flow.png`,
+  },
+];
 
 const OLD_IMAGES = [
   {
@@ -41,8 +49,16 @@ const OLD_IMAGES = [
 
 const AI_IMAGES = [
   {
-    title: "v0.dev generated screens",
+    title: "v0.dev main encounter screen",
     imagePath: `${IMG_URL}/desktop_ai.png`,
+  },
+  {
+    title: "v0.dev generated medication screen",
+    imagePath: `${IMG_URL}/desktop_ai_med.png`,
+  },
+  {
+    title: "v0.dev generated vital signs screen",
+    imagePath: `${IMG_URL}/desktop_ai_vitals.png`,
   },
 ];
 
@@ -128,6 +144,27 @@ const MOBILE_IMAGES = [
   },
 ];
 
+const DECISION_IMAGES = [
+  {
+    title: "Main encounter screen",
+    subtitle:
+      "Red marks to be removed, the tabs can be compressed into one row, and greens are very useful to be added.",
+    imagePath: `${IMG_URL}/decision_main.png`,
+  },
+  {
+    title: "Medication screen",
+    subtitle:
+      "Problem with unable to input fields into quantity. Others are auto filled which is great, though the lock icon should not be there at all as it might tell the practitioners they could be editable even though it will never be the case.",
+    imagePath: `${IMG_URL}/decision_med.png`,
+  },
+  {
+    title: "Vital sign screen",
+    subtitle:
+      "Similarly, inputs here cannot be edited manually. The blood pressure is particularly problematic as it's actually two input fields, where the increment/decrement buttons will not be suitable.",
+    imagePath: `${IMG_URL}/decision_vitals.png`,
+  },
+];
+
 const HomeAssistantPage = () => {
   const { projectStatements, yearOfCompletion, genres } = Data || {};
 
@@ -146,40 +183,58 @@ const HomeAssistantPage = () => {
           currProgTip={"intro"}
           bgColor={"hsl(147, 100%, 98%)"}
         >
-          <div className="pc-content-title ">backstory</div>
+          <div className="pc-content-title ">introduction</div>
           <div className="pc-content-body">
-            working with lifelinelab sdn.bhd, a designer and i were tasked with
-            a module - prescription system as part of a wider ecosystem. This
-            system supports the entire flow of a typical patient management life
-            cycle.
+            we worked with practitioners in clinics by first addressing their
+            potential frustrations. they were working across separate systems
+            for patient records, prescriptions and financial transactions, which
+            made it hard to look back at the patient's history during a
+            consultation. this section highlights on the encounter-focused
+            interface that brings all the pieces together.
           </div>
-          <div className="pc-content-title green">prescription - input</div>
+          <div className="pc-content-title green">problem</div>
           <div className="pc-content-body">
-            for demonstration purposes, here i have used part of an earlier
-            sketch based on the requirements. for legal purposes it does not
-            represent the final product. however, it fulfils the following:
+            practitioners had to first look at the patient's information, then
+            prescribe medication, and then look back it again, and then check if
+            the medication is suitable. this was done by referring to different
+            systems. the system could not flag potentially unsuitable
+            medication, and in this fast-paced environment, using separate
+            systems became a problem.
+          </div>
+          <div className="pc-content-title green">goals</div>
+          <div className="pc-content-body">
             <ul>
-              <li>reference current patient</li>
-              <li>enable prescription of medication, procedure, vaccines</li>
-              <li>lookup allergies</li>
-              <li>create medical certificate on the fly</li>
-              <li>supports mobile screen</li>
+              <li>
+                practitioners should be able to look at patient, prescription,
+                billing history without leaving the encounter.
+              </li>
+              <li>
+                system should automatically show inventory stocks during the
+                prescription phase.
+              </li>
             </ul>
           </div>
           <div className="pc-content-body">
-            this is based on:
-            <ul>
-              <li>current design library and tokens</li>
-              <li>older materials</li>
-            </ul>
+            constraints: this section is part of a much larger ecosystem, thus
+            has to work flawlessly. team size was adequate, but timeline had to
+            be refined to meet deployment times.
+          </div>
+          <div className="pc-content-title green">user flow</div>
+          <div className="pc-content-body">
+            a simple user flow here describes how a practitioner might interact
+            with the system, specifically focused on the encounter.
+          </div>
+          <div className="pc-content-body gallery">
+            <EmblaCarousel slides={USER_FLOW_IMAGE} options={OPTIONS} />
+          </div>
+          <div className="pc-content-title green">design process</div>
+          <div className="pc-content-body">
+            the grey sketch presents a baseline for the outcome. tabs were
+            selected as prescriptions were more often decided during
+            consultation than linear steps.
           </div>
           <div className="pc-content-body gallery">
             <EmblaCarousel slides={OLD_IMAGES} options={OPTIONS} />
-          </div>
-          <div className="pc-content-title ">my own attempt</div>
-          <div className="pc-content-body">
-            i attempted to draft one myself to include responsiveness. may not
-            be beautiful, but it is optimised for responsiveness.
           </div>
           <div className="pc-content-body gallery">
             <EmblaCarousel slides={DESKTOP_IMAGES} options={OPTIONS} />
@@ -191,43 +246,36 @@ const HomeAssistantPage = () => {
           currProgTip={"intro"}
           bgColor={"#F7F7F7"}
         >
-          <div className="pc-content-title ">brief with claude</div>
+          <div className="pc-content-title ">second perspective: ai</div>
           <div className="pc-content-body">
-            we may have missed out on a few requirements; so for assistance, i
-            conversed with an LLM, claude AI, passing in prompts to create a
-            brief. this brief contains all the requirements, questions that we
-            could only later answer, and so on.
+            since i only had one design direction, i was interested to see how
+            AI would handle this problem. it would also be useful to first cover
+            potentially missing requirements.
           </div>
-          <div className="pc-content-title green">v0.dev</div>
           <div className="pc-content-body">
-            with the brief, this is then passed onto v0.dev, an ai assistant
-            that takes in information within the brief and then develop screens.
-            however, the results are not used directly, because:
-            <ul>
-              <li>
-                designs might look beautiful, but lacks user experience and
-                proper user flow
-              </li>
-              <li>requires tokens ($$$) to modify designs</li>
-              <li>not great with responsive screens</li>
-            </ul>
+            i first draft a brief with claude, and discussed with it. screenshot
+            of the brief is shown below.
           </div>
-          <div className="pc-content-title ">back to claude</div>
+          <div className="pc-content-title green">ai prototyping</div>
           <div className="pc-content-body">
-            with the ai-developed screens, i again used LLM to discuss about
-            potential issues, such as: any dark UX patterns? does the flow make
-            sense? with all the heuristics available by experts, what are
-            possible violations?
-            <ul>
-              <li>
-                treating myself as the UX expert, i eliminated some redundant or
-                unnecessary features/flow that were found in the developed
-                screens.
-              </li>
-            </ul>
+            i passed this brief to v0.dev for it to prototype the design.
           </div>
           <div className="pc-content-body gallery">
             <EmblaCarousel slides={AI_IMAGES} options={OPTIONS} />
+          </div>
+          <div className="pc-content-body">
+            i evaluated the designs it showed, by writing it down as it is
+            easier for me to picture the changes. the screenshot below shows the
+            sketched evaluation.
+          </div>
+          <div className="pc-content-body gallery">
+            <EmblaCarousel slides={DECISION_IMAGES} options={OPTIONS} />
+          </div>
+          <div className="pc-content-title ">prototyping limitation</div>
+          <div className="pc-content-body">
+            problem: on the free plan, there was a very restrictive credit
+            limit. ai generation was fast, but adjusting and altering cost
+            credits. so, i took the ideas and rebuilt them myself.
           </div>
         </ProjectContent>
         <ProjectContent
@@ -236,25 +284,18 @@ const HomeAssistantPage = () => {
           currProgTip={"intro"}
           bgColor={"#E3FAFF"}
         >
-          <div className="pc-content-title ">
-            cooperation between ai and human
-          </div>
+          <div className="pc-content-title ">decision table</div>
           <div className="pc-content-body">
-            after all, using ai is the key for the best efficiency. the designs
-            produced were edited back into Figma, and then modified.
-            <ul>
-              <li>
-                for design showcase, i did not examine the usefulness and
-                practicality. performing a ux research / a/b testing / etc will
-                require investing more time, so for now, this is the final
-                result.
-              </li>
-              <li>
-                i still retained the cleaner look as time is important for
-                practitioners, and too many features might slow down their
-                process.
-              </li>
-            </ul>
+            i brought the ideas made by v0.dev and then evaluated against the
+            same criteria: clear hierarchy, quick scanning and low risk of
+            clinical error. here are a few decisions made, not everything is
+            shown for brevity.
+          </div>
+          <div className="pc-content-body">{DecisionTable()}</div>
+          <div className="pc-content-title ">design walkthrough</div>
+          <div className="pc-content-body">
+            designs below combine previous work and newer ideas. nevertheless
+            much more iterations were still needed to improve it.
           </div>
           <div className="pc-content-body gallery">
             <EmblaCarousel slides={MERGED_IMAGES} options={OPTIONS} />
