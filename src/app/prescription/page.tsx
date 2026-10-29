@@ -64,9 +64,9 @@ const AI_IMAGES = [
 
 const MERGED_IMAGES = [
   {
-    title: "(1) Landing",
+    title: "(1) Encounter",
     subtitle:
-      "Placed the patient info details at the left. Retained a much cleaner look as opposed to what v0.dev has given.",
+      "Placed the patient info details at the left. By default the main screen is empty, where clicking on any tab will initiate the encounter process.",
     imagePath: `${IMG_URL}/encounter_landing.png`,
   },
   {
@@ -77,7 +77,7 @@ const MERGED_IMAGES = [
   {
     title: "(3) Vital signs with last visit reference",
     subtitle:
-      "When referencing is turned on, practitioners can look at previous records, and replace if needed. Admittedly, there is a UX problem here, where practitioners can get confused if the purple means the input has automatically inserted.",
+      "When referencing is turned on, practitioners can look at previous records, and replace if needed. however, a newer ux problem is identified, where practitioners may get confused on whether the purple text in the input fields meant that the input fields have been automatically filled.",
     imagePath: `${IMG_URL}/vs_last_visit.png`,
   },
   {
