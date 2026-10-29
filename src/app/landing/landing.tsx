@@ -4,18 +4,18 @@ import Link from "next/link";
 
 import SkillData from "@Data/skills.json";
 
-import FirstData from "@Data/materials/home-assistant.json";
-import SecondData from "@Data/materials/kitchen.json";
-import ThirdData from "@Data/materials/protothon-2026.json";
-import FourthData from "@Data/materials/prescription.json";
+import HomeAssistant from "@Data/materials/home-assistant.json";
+import Kitchen from "@Data/materials/kitchen.json";
+import Protothon from "@Data/materials/protothon-2026.json";
+import Prescription from "@Data/materials/prescription.json";
 
 import Showcase from "@Components/landing/showcase/showcase";
 
 import SkillRow from "@Components/landing/skill-row/skill-row";
 import NoticeBar from "@Components/notice/notice";
 
-const ShowcaseData = [FirstData, SecondData, ThirdData];
-const LegacyData = [FourthData];
+const ShowcaseData = [HomeAssistant, Prescription, Kitchen];
+const LegacyData = [Protothon];
 
 const Landing = () => {
   return (
