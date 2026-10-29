@@ -4,6 +4,8 @@
     { "text": "material design", "highlight": true },
     { "text": "material ui", "highlight": true },
     { "text": "ant design", "highlight": true },
+    { "text": "figma make", "highlight": true },
+    { "text": "v0", "highlight": true },
     { "text": "adobe illustrator", "highlight": false },
     { "text": "adobe xd", "highlight": false },
     { "text": "apple human interface guidelines", "highlight": false },
@@ -14,8 +16,11 @@
     { "text": "qualitative research", "highlight": true },
     { "text": "semi-structured interviews", "highlight": true },
     { "text": "reflexive thematic analysis", "highlight": true },
+    { "text": "condens.io", "highlight": true },
     { "text": "quantitative research", "highlight": false },
-    { "text": "affinity mapping", "highlight": false }
+    { "text": "affinity mapping", "highlight": false },
+    { "text": "wcag guidelines", "highlight": false },
+    { "text": "iso guidelines", "highlight": false }
   ],
   "tech stack": [
     { "text": "react js", "highlight": true },

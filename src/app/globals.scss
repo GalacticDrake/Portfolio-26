@@ -111,12 +111,198 @@ a {
   text-transform: lowercase;
 
   &.gallery {
-    margin-top: 24px;
-    border-bottom: solid 1px var(--grey);
+    // margin-top: 24px;
+    // border-bottom: solid 1px var(--grey);
+    border: solid 1px var(--grey);
+    border-radius: 8px;
+    padding: 16px;
+
+    background-color: var(--background);
   }
 }
 
 .pc-li-emp {
   font-weight: bold;
   color: var(--dark-grey);
+}
+
+/// Decision table: all classes prefixed with pct- and scoped under .pct-decision-table
+// Colors and type sizes come from the global :root tokens (--foreground, --primary, etc.),
+// so make sure those tokens are loaded before this component renders.
+
+$pct-radius: 8px;
+$pct-cell-x: 1.25rem;
+$pct-breakpoint-sm: 640px;
+
+@mixin pct-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.pct-decision-table {
+  width: 100%;
+  overflow-x: auto;
+  color: var(--foreground);
+  background: var(--background);
+  border: 1px solid var(--grey);
+  border-radius: $pct-radius;
+  font-family: inherit;
+  font-size: var(--body);
+  line-height: 1.5;
+
+  .pct-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+  }
+
+  .pct-caption {
+    padding: 1rem $pct-cell-x;
+    text-align: left;
+    font-size: var(--heading-h6);
+    font-weight: 600;
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .pct-th {
+    padding: 0.75rem $pct-cell-x;
+    background: var(--light-grey);
+    color: var(--dark-grey);
+    font-size: var(--body);
+    font-weight: 600;
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .pct-td {
+    padding: 1rem $pct-cell-x;
+    vertical-align: top;
+    font-size: var(--body);
+    border-bottom: 1px solid var(--grey);
+  }
+
+  .pct-row:last-child .pct-td {
+    border-bottom: 0;
+  }
+
+  // Column widths
+  .pct-th--idea,
+  .pct-td--idea {
+    width: 34%;
+  }
+
+  .pct-th--decision,
+  .pct-td--decision {
+    width: 20%;
+  }
+
+  .pct-th--reason,
+  .pct-td--reason {
+    width: 46%;
+    color: var(--dark-grey);
+  }
+
+  // Left edge marker repeats the decision, so it never relies on color alone
+  .pct-row--accepted .pct-td--idea {
+    box-shadow: inset 4px 0 0 var(--primary);
+  }
+
+  .pct-row--rejected .pct-td--idea {
+    box-shadow: inset 4px 0 0 var(--reddish);
+  }
+
+  // Decision badge: the bright brand colors are used for the dot only,
+  // the label stays dark so the text remains readable
+  .pct-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.125rem 0.75rem 0.125rem 0.625rem;
+    border-radius: 999px;
+    color: var(--foreground);
+    font-size: var(--subtitle);
+    font-weight: 600;
+
+    &::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 50%;
+    }
+
+    &--accepted {
+      background: var(--light-primary);
+
+      &::before {
+        background: var(--primary);
+      }
+    }
+
+    &--rejected {
+      background: var(--light-grey);
+
+      &::before {
+        background: var(--reddish);
+      }
+    }
+  }
+
+  .pct-note {
+    display: block;
+    margin-top: 0.375rem;
+    color: var(--dark-grey);
+    font-size: var(--subtitle);
+  }
+
+  // Small screens: each row becomes a stacked block with its own labels
+  @media (max-width: $pct-breakpoint-sm) {
+    .pct-thead {
+      @include pct-visually-hidden;
+    }
+
+    .pct-table,
+    .pct-tbody,
+    .pct-row,
+    .pct-td {
+      display: block;
+      width: 100%;
+    }
+
+    .pct-row {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--grey);
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    .pct-td {
+      padding: 0.5rem $pct-cell-x;
+      border-bottom: 0;
+
+      &::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 0.125rem;
+        color: var(--dark-grey);
+        font-size: var(--subtitle);
+        font-weight: 600;
+      }
+    }
+
+    .pct-th--idea,
+    .pct-td--idea,
+    .pct-td--decision,
+    .pct-td--reason {
+      width: 100%;
+    }
+
+    .pct-td--reason {
+      color: var(--foreground);
+    }
+  }
 }
